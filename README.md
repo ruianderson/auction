@@ -6,8 +6,8 @@ an application that bids automatically on items auctions at an online service.
 While the book covers the bidder application and mocks the auction server behavior,
 this project tries to implement a real auction server using the aproaches described in the book.
 
-The intention behind it is to improve OO skills and have a chance to think at
-complext problems like: messages integration, transactions, queues, concurrency etc.
+The intention behind it, is to improve OO skills and have a chance to think about
+complex problems like: messages integration, transactions, queues, concurrency etc.
 
 ## Architecture
 
