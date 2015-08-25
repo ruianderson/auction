@@ -17,6 +17,7 @@ describe Auction do
 
       auction.items.clear
       auction.items.wont_be_empty
+      auction.items.each { |item| item.must_be_kind_of(Item) }
     end
   end
 
