@@ -8,7 +8,7 @@ describe Auction do
   end
 
   it 'requires a list of items' do
-    proc { Auction.new(deadline: Time.new(2015, 01, 01)) }.must_raise Errors::EmptyAuctionItemsError
+    proc { Auction.new(deadline: Time.new(2015, 01, 01)) }.must_raise Errors::InvalidItemsError
   end
 
   describe '#items' do

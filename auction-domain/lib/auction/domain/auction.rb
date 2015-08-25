@@ -3,7 +3,7 @@ require_relative './errors'
 class Auction
   def initialize(deadline: deadline, items: [])
     fail Errors::InvalidDeadlineError unless deadline.is_a?(Time)
-    fail Errors::EmptyAuctionItemsError unless items.any?
+    fail Errors::InvalidItemsError unless items.any?
 
     @deadline = deadline
     @items    = items
