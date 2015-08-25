@@ -4,7 +4,7 @@ require 'auction/domain/item'
 
 describe Auction do
   it 'requires a deadline' do
-    proc { Auction.new }.must_raise Errors::InvalidDeadlineError
+    proc { Auction.new(deadline: nil) }.must_raise Errors::InvalidDeadlineError
   end
 
   it 'requires a list of items' do
