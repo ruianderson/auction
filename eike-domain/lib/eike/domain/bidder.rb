@@ -1,0 +1,1 @@
+Bidder = Struct.new(:name)

@@ -1,6 +1,7 @@
 require 'test_helper'
 require 'eike/domain/auction'
 require 'eike/domain/item'
+require 'eike/domain/bidder'
 
 describe Auction do
   it 'requires a deadline' do
@@ -18,6 +19,17 @@ describe Auction do
       auction.items.clear
       auction.items.wont_be_empty
       auction.items.each { |item| item.must_be_kind_of(Item) }
+    end
+  end
+
+  describe '#register_bidder' do
+    it 'registers a given bidder on auction' do
+      auction = Auction.new(deadline: Time.new(2015, 01, 01), items: [Item.new('name', 1.0)])
+
+      bidder = Bidder.new(name: 'Bidder #01')
+      auction.register_bidder(bidder)
+
+      auction.bidders.must_include(bidder)
     end
   end
 
