@@ -1,5 +1,5 @@
 require "auction/domain/version"
 
-module Auction
+module Eike
   module Domain; end
 end

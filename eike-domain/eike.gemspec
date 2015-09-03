@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'auction/domain/version'
+require 'eike/domain/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "auction-domain"
-  spec.version       = Auction::Domain::VERSION
+  spec.name          = "eike"
+  spec.version       = Eike::Domain::VERSION
   spec.authors       = ["Rui Anderson"]
   spec.email         = ["anderson.rui@gmail.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}

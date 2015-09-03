@@ -1,6 +1,6 @@
 require 'test_helper'
-require 'auction/domain/auction'
-require 'auction/domain/item'
+require 'eike/domain/auction'
+require 'eike/domain/item'
 
 describe Auction do
   it 'requires a deadline' do
