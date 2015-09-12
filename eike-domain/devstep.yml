@@ -1,0 +1,52 @@
+# The Docker repository to keep images built by devstep
+# DEFAULT: 'devstep/<CURRENT_DIR_NAME>'
+# repository: 'repo/name'
+
+# The image used by devstep when building environments from scratch
+# DEFAULT: 'fgrehm/devstep:v0.3.1'
+# source_image: 'custom/image:tag'
+
+# The host cache dir that gets mounted inside the container at '/home/devstep/cache'
+# for speeding up the dependencies installation process.
+# DEFAULT: '/tmp/devstep/cache'
+# cache_dir: '{{env "HOME"}}/devstep/cache'
+
+# The directory where project sources should be mounted inside the container.
+# DEFAULT: '/workspace'
+working_dir: '/workspace/eike-domain'
+
+# Link to other existing containers (like a database for example).
+# Please note that devstep won't start the associated containers automatically
+# and an error will be raised in case the linked container does not exist or
+# if it is not running.
+# DEFAULT: <empty>
+# links:
+# - "postgres:db"
+# - "memcached:mc"
+
+# Additional Docker volumes to share with the container.
+# DEFAULT: <empty>
+volumes:
+  - '{{env "HOME"}}/code/auction/:/workspace/'
+
+# Environment variables.
+# DEFAULT: <empty>
+# environment:
+#   RAILS_ENV: "development"
+
+# Custom command aliases that can be used with 'devstep run' to save some
+# typing. It is also used for generating project specific binstubs.
+# DEFAULT: <empty>
+commands:
+  # This can be run with 'devstep run server'
+  test:
+    cmd: ["rake", "test"]
+  ruby:
+    # No custom options, used only for generating binstubs
+
+# Custom provisioning steps that can be used when the available buildpacks are not
+# enough. Use it to configure addons or run additional commands during the build.
+# DEFAULT: <empty>
+# provision:
+#   - ['configure-addons', 'redis']
+#   - ['configure-addons', 'heroku-toolbelt']
