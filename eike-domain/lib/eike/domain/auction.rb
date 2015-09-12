@@ -7,10 +7,19 @@ class Auction
 
     @deadline = deadline
     @items    = items
+    @bidders  = []
   end
 
   def items
     @items.dup
+  end
+
+  def bidders
+    @bidders.dup
+  end
+
+  def register_bidder(bidder)
+    @bidders << bidder
   end
 
   def finished?
